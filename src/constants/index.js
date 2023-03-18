@@ -18,6 +18,8 @@ import {
     figma,
 } from "../assets"
 
+const heroText = ["Hey!", "I'm Guille Ávila"]
+
 const navLinks = [
     {
         id: "about",
@@ -187,4 +189,4 @@ const projects = [
     }
 ]
 
-export { navLinks, technologies, experiences, projects };
+export { heroText, navLinks, technologies, experiences, projects };

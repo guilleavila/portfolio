@@ -12,4 +12,13 @@
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   scroll-behavior: smooth;
+  cursor: none;
+}
+
+.mouse {
+  background-color: #b61212;
+}
+
+span {
+  display: inline-block;
 }
