@@ -10,7 +10,7 @@ const Mouse = ({ variants, spring, color }) => {
             variants={variants}
             animate="default"
             transition={spring}
-            className={`${color === "primary" ? 'bg-primary' : 'bg-secondary'} rounded-xl fixed top-0 left-0 z-20`}
+            className={`${color === "primary" ? 'bg-mouse-primary' : 'bg-secondary'} rounded-xl fixed top-0 left-0 z-20`}
         />
     )
 }

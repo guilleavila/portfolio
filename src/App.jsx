@@ -46,7 +46,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="text-secondary relative z-0 bg-pattern bg-cover bg-no-repeat bg-center" ref={ref}>
+      <div className="text-secondary relative z-0 bg-pattern bg-cover bg-repeat bg-center" ref={ref}>
         <Mouse variants={variants} spring={spring} color={color} />
         <Navbar />
         <div onMouseEnter={changeColorBlack}>

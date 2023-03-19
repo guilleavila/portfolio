@@ -1,13 +1,18 @@
+import { motion } from "framer-motion"
 import { heroText } from "../constants"
 import { styles } from "../styles"
 import TextSpan from "./TextSpan"
 
-
 const Hero = () => {
 
     return (
-        <section className="bg-primary relative w-full h-screen">
-            <div className={`${styles.paddingX} 7xl:ml-16 absolute inset-0 top-50 w-full mx-auto flex flex-col justify-center items-start gap-5`}>
+        <div className={`${styles.paddingX} flex items-center py-6 relative w-full h-screen`}>
+            <div className={`w-full flex flex-col justify-between items-start max-w-7xl mx-auto`}>
+
+                {/* <motion.div
+                    className="bg-primary w-[200vw] h-[200vh] absolute top-[-50vh] left-[-100vw] z-[-20] rounded-full"
+                    animate={{ x: -1000, transition: { duration: 2 } }}
+                /> */}
 
                 <h1 className={`${styles.heroHeadText}`}>
 
@@ -21,31 +26,11 @@ const Hero = () => {
                         })
                     }
 
-                    {/* {
-                        heroText[0].split('').map((letter, letterIndex) => {
-                            return (
-                                <TextSpan key={letterIndex}>
-                                    {letter}
-                                </TextSpan>
-                            )
-                        })
-                    }
-                    <br />
-                    {
-                        heroText[1].split('').map((letter, letterIndex) => {
-                            return (
-                                <TextSpan key={letterIndex}>
-                                    {letter}
-                                </TextSpan>
-                            )
-                        })
-                    } */}
-
                 </h1>
 
-                < p className={`${styles.heroSubText}`}>Frontend Developer & UX Designer</p>
+                <p className={`${styles.heroSubText} fixed bottom-20`}>Frontend Developer & UX Designer</p>
             </div>
-        </section >
+        </div >
     )
 }
 
