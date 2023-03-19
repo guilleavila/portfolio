@@ -1,26 +1,28 @@
 import { motion, useAnimationControls } from "framer-motion"
 
-const TextSpan = ({ children }) => {
+const TextSpan = ({ children, br }) => {
 
     const controls = useAnimationControls()
 
     const fillAnimation = () => {
         controls.start({
-            transform: [
-                'color(red)',
-                'color(black'
-            ],
-            transition: { duration: 1 },
+            color: ['#69af99', '#3d3d3d'],
+            transition: { duration: 4 },
 
         })
     }
 
     return (
-        <motion.span
-            animate={controls}
-            onMouseOver={() => fillAnimation()}>
-            {children}
-        </motion.span>
+        <>
+            {br && <br />}
+            <motion.span
+                animate={controls}
+                onMouseOver={() => fillAnimation()}>
+                {
+                    children === " " && !br ? "\u00A0" : children
+                }
+            </motion.span>
+        </>
     )
 }
 

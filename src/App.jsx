@@ -13,8 +13,8 @@ function App() {
     leaveDelay: 100
   })
 
-  let mouseXPosition = 0;
-  let mouseYPosition = 0;
+  let mouseXPosition = -10;
+  let mouseYPosition = -10;
 
   if (mouse.x !== null) {
     mouseXPosition = mouse.clientX;
@@ -29,8 +29,8 @@ function App() {
       opacity: 1,
       height: 24,
       width: 24,
-      x: mouseXPosition,
-      y: mouseYPosition
+      x: mouseXPosition - 12,
+      y: mouseYPosition - 12
     }
   }
 
@@ -41,21 +41,18 @@ function App() {
     mass: 0.1
   };
 
-  const changeColorGreen = () => {
-    setColor("primary")
-  }
-
-  const changeColorBlack = () => {
-    setColor("secondary")
-  }
+  const changeColorGreen = () => setColor("primary")
+  const changeColorBlack = () => setColor("secondary")
 
   return (
     <BrowserRouter>
       <div className="text-secondary relative z-0 bg-pattern bg-cover bg-no-repeat bg-center" ref={ref}>
         <Mouse variants={variants} spring={spring} color={color} />
         <Navbar />
-        <Hero />
-        <div onMouseEnter={changeColorGreen} onMouseLeave={changeColorBlack} >
+        <div onMouseEnter={changeColorBlack}>
+          <Hero />
+        </div>
+        <div onMouseEnter={changeColorGreen} >
           <About />
           <Experience />
           <Projects />

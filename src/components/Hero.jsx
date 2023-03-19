@@ -10,16 +10,37 @@ const Hero = () => {
             <div className={`${styles.paddingX} 7xl:ml-16 absolute inset-0 top-50 w-full mx-auto flex flex-col justify-center items-start gap-5`}>
 
                 <h1 className={`${styles.heroHeadText}`}>
-                    {heroText.map((word, wordIndex) => (
-                        word.split('').map((letter, letterIndex) => {
+
+                    {
+                        heroText.split('').map((letter, letterIndex) => {
                             return (
-                                wordIndex === 1 && letterIndex === 0
-                                    ? <TextSpan key={letterIndex}><br />{letter}</TextSpan>
-                                    : <TextSpan key={letterIndex}>{letter}</TextSpan>
+                                letterIndex === 4
+                                    ? <TextSpan key={letterIndex} br={true}>{letter}</TextSpan>
+                                    : <TextSpan key={letterIndex} br={false}>{letter}</TextSpan>
                             )
-                        }
-                        )
-                    ))}
+                        })
+                    }
+
+                    {/* {
+                        heroText[0].split('').map((letter, letterIndex) => {
+                            return (
+                                <TextSpan key={letterIndex}>
+                                    {letter}
+                                </TextSpan>
+                            )
+                        })
+                    }
+                    <br />
+                    {
+                        heroText[1].split('').map((letter, letterIndex) => {
+                            return (
+                                <TextSpan key={letterIndex}>
+                                    {letter}
+                                </TextSpan>
+                            )
+                        })
+                    } */}
+
                 </h1>
 
                 < p className={`${styles.heroSubText}`}>Frontend Developer & UX Designer</p>

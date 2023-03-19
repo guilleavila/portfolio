@@ -18,7 +18,7 @@ import {
     figma,
 } from "../assets"
 
-const heroText = ["Hey!", "I'm Guille Ávila"]
+const heroText = "Hey! I'm Guille Ávila"
 
 const navLinks = [
     {

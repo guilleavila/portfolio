@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,10 +15,7 @@
   cursor: none;
 }
 
-.mouse {
-  background-color: #b61212;
-}
-
 span {
+  font-family: 'Montserrat Alternates', sans-serif;
   display: inline-block;
 }
