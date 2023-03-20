@@ -1,66 +1,53 @@
-import useMouse from '@react-hook/mouse-position'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import { About, Contact, Experience, Hero, Mouse, Navbar, Projects, Tech } from './components'
+import { About, Contact, Experience, Hero, Navbar, Projects, Tech } from './components'
+import useLocoScroll from './hooks/useLocoScroll'
 
 function App() {
 
-  const [color, setColor] = useState("secondary")
+  // preloader logic
+  const [preloader, setPreloader] = useState(true)
+  const [timer, setTimer] = useState(1)
 
-  const ref = useRef(null)
-  const mouse = useMouse(ref, {
-    enterDelay: 100,
-    leaveDelay: 100
-  })
+  const intervalId = useRef(null)
 
-  let mouseXPosition = -10;
-  let mouseYPosition = -10;
-
-  if (mouse.x !== null) {
-    mouseXPosition = mouse.clientX;
+  const clear = () => {
+    window.clearInterval(intervalId.current)
+    setPreloader(false)
   }
 
-  if (mouse.y !== null) {
-    mouseYPosition = mouse.clientY;
-  }
+  useEffect(() => {
+    intervalId.current = window.setInterval(() => {
+      setTimer((timer) => timer - 1)
+    }, 1000)
+  }, [])
 
-  const variants = {
-    default: {
-      opacity: 1,
-      height: 24,
-      width: 24,
-      x: mouseXPosition - 12,
-      y: mouseYPosition - 12
+  useEffect(() => {
+    if (timer < 0) {
+      clear()
     }
-  }
+  }, [timer])
 
-  const spring = {
-    type: "spring",
-    stiffness: 3000,
-    damping: 100,
-    mass: 0.1
-  };
-
-  const changeColorGreen = () => setColor("primary")
-  const changeColorBlack = () => setColor("secondary")
+  useLocoScroll(!preloader)
 
   return (
-    <BrowserRouter>
-      <div className="text-secondary relative z-0 bg-pattern bg-cover bg-repeat bg-center" ref={ref}>
-        <Mouse variants={variants} spring={spring} color={color} />
-        <Navbar />
-        <div onMouseEnter={changeColorBlack}>
-          <Hero />
-        </div>
-        <div onMouseEnter={changeColorGreen} >
-          <About />
-          <Experience />
-          <Projects />
-          <Tech />
-          <Contact />
-        </div>
-      </div>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        {preloader ? (
+          <div>Loading</div>
+        ) : (
+          <div id="main-container" className="text-secondary relative z-0 bg-pattern bg-cover bg-repeat bg-center" data-scroll-container>
+            <Navbar />
+            <Hero />
+            <About />
+            <Experience />
+            <Projects />
+            <Tech />
+            <Contact />
+          </div>
+        )}
+      </BrowserRouter>
+    </>
   )
 }
 

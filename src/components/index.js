@@ -6,7 +6,6 @@ import Navbar from "./Navbar"
 import Projects from "./Projects"
 import Skills from "./Skills"
 import Tech from "./Tech"
-import Mouse from "./Mouse"
 
 export {
     About,
@@ -17,5 +16,4 @@ export {
     Projects,
     Skills,
     Tech,
-    Mouse
 }
