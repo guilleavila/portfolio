@@ -19,7 +19,7 @@ const About = () => {
     }, [reveal])
 
     return (
-        <div onMouseEnter={changeColorGreen} className={`${styles.paddingX} flex items-center py-6 relative w-full h-screen bg-primary`} data-scroll-section>
+        <div onMouseEnter={changeColorGreen} className={`${styles.paddingX} flex items-center py-6 relative w-full h-screen`} data-scroll-section>
             <h1 id="about-title" ref={ref} className={`${styles.heroHeadText}`}>SOY EL ABOUT</h1>
         </div >
     )

@@ -7,7 +7,7 @@ const TextSpan = ({ children, br }) => {
     const fillAnimation = () => {
         controls.start({
             color: ['#69af99', '#3d3d3d'],
-            transition: { duration: 4 },
+            transition: { duration: 3.5, delay: 0.7 },
 
         })
     }

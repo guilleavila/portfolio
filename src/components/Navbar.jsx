@@ -4,12 +4,19 @@ import { Link } from "react-router-dom"
 import { styles } from "../styles"
 import { navLinks } from "../constants"
 import { rubberduck, close, menu } from '../assets'
-
+import { motion, useAnimationControls } from "framer-motion"
 
 const Navbar = () => {
 
     const [active, setActive] = useState('')
     const [toggle, setToggle] = useState(false)
+
+    const controls = useAnimationControls()
+    const navlinkAnimate = () => {
+        controls.start({
+            scale: [1, 2]
+        })
+    }
 
     return (
 
@@ -32,12 +39,13 @@ const Navbar = () => {
                 {/* DESKTOP NAVLINKS */}
                 <ul className="list-none hidden md:flex flex-row gap-16">
                     {navLinks.map((link) => (
-                        <li key={link.id}
+                        <motion.li key={link.id}
                             className={`${active === link.title ? "font-bold" : ""}`}
                             onClick={() => setActive(link.title)}
+                        // onMouseOver={() => navlinkAnimate()}
                         >
                             <a href={`#${link.id}`}>{link.title.toUpperCase()}</a>
-                        </li>
+                        </motion.li>
                     ))}
                 </ul>
 
@@ -68,7 +76,7 @@ const Navbar = () => {
                 </div>
 
             </div>
-        </nav>
+        </nav >
     )
 }
 

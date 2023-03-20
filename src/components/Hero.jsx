@@ -15,24 +15,14 @@ const Hero = () => {
 
     const { changeColorBlack } = useContext(MouseContext)
 
+    const { scrollYProgress } = useScroll()
+    const top = useTransform(scrollYProgress, [0, 2], ['-100vh', '-200vw'])
+    const scale = useTransform(scrollYProgress, [0, 2], ['100%', '0%'])
+    const opacity = useTransform(scrollYProgress, [0, 0.5], ['100%', '0%'])
+
     useEffect(() => {
-        // text animations
         gsap.fromTo("#hero-title", 0.3, { opacity: 0, y: '10vh' }, { opacity: 1, delay: 0.3, y: '0vh' })
         gsap.fromTo("#hero-p", 0.3, { opacity: 0, y: '10vh' }, { opacity: 1, delay: 0.4, y: '0vh' })
-
-        // scroll trigger
-        // gsap.to("#hero-container", {
-        //     ease: "none",
-        //     scrollTrigger: {
-        //         start: "top top",
-        //         trigger: ref.current,
-        //         scroll: "#main-container",
-        //         pin: true,
-        //         scrub: 0.5,
-        //         end: () => `+=${ref.current.offsetHeight}`
-        //     }
-        // })
-
     }, [])
 
     return (
@@ -41,9 +31,14 @@ const Hero = () => {
             onMouseEnter={changeColorBlack}
             className={`${styles.paddingX} flex items-center py-6 relative w-full h-screen`}>
 
+            <motion.div
+                className="bg-primary w-[200vw] h-[200vw] absolute top-[-100%] right-[-50vw] z-[-20] rounded-full"
+                style={{ top, scale }}
+            />
+
             <div className={`w-full flex flex-col justify-between items-start max-w-7xl mx-auto`}>
 
-                <h1 id="hero-title" className={`${styles.heroHeadText}`} data-scroll>
+                <motion.h1 id="hero-title" className={`${styles.heroHeadText}`} style={{ opacity }} data-scroll>
                     {
                         heroText.split('').map((letter, letterIndex) => {
                             return (
@@ -53,9 +48,9 @@ const Hero = () => {
                             )
                         })
                     }
-                </h1>
+                </motion.h1>
 
-                <p id="hero-p" className={`${styles.heroSubText} fixed bottom-20`} data-scroll>Frontend Developer & UX Designer</p>
+                <motion.p id="hero-p" style={{ opacity }} className={`${styles.heroSubText} mt-[10vh]`} data-scroll>Frontend Developer & UX Designer</motion.p>
 
             </div>
         </section >
@@ -63,16 +58,3 @@ const Hero = () => {
 }
 
 export default Hero
-
-
-// const { scrollYProgress, scrollY } = useScroll()
-
-// const right = useTransform(scrollYProgress, [1, 0], ['100vw', '0vw'])
-// const borderRadius = useTransform(scrollYProgress, [1, 0], ['100%', '0%'])
-
-{/* <motion.div
-                    className="bg-primary w-full h-screen absolute top-[0vw] right-[0vw] z-[-20]"
-                    // initial={{ scale: 1 }}
-                    // animate={{ left: '-100vw' }}
-                    style={{ right, borderRadius }}
-                /> */}
