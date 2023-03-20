@@ -11,16 +11,9 @@ const Navbar = () => {
     const [active, setActive] = useState('')
     const [toggle, setToggle] = useState(false)
 
-    const controls = useAnimationControls()
-    const navlinkAnimate = () => {
-        controls.start({
-            scale: [1, 2]
-        })
-    }
-
     return (
 
-        <nav className={`${styles.paddingX} w-full flex items-center py-6 fixed top-0 z-20`}>
+        <nav className={`${styles.paddingX} w-full flex items-center py-6 fixed z-20 top-0`}>
             <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
 
                 {/* LOGO + NAME */}
@@ -40,9 +33,12 @@ const Navbar = () => {
                 <ul className="list-none hidden md:flex flex-row gap-16">
                     {navLinks.map((link) => (
                         <motion.li key={link.id}
-                            className={`${active === link.title ? "font-bold" : ""}`}
+                            className={`${active === link.title ? "font-bold" : ""} text-secondary`}
                             onClick={() => setActive(link.title)}
-                        // onMouseOver={() => navlinkAnimate()}
+                            whileHover={{
+                                scale: 1.1,
+                                color: '#69af99'
+                            }}
                         >
                             <a href={`#${link.id}`}>{link.title.toUpperCase()}</a>
                         </motion.li>

@@ -36,7 +36,7 @@ function App() {
         {preloader ? (
           <div>Loading</div>
         ) : (
-          <div id="main-container" className="text-secondary relative z-0 bg-pattern bg-cover bg-repeat bg-center" data-scroll-container>
+          <div id="main-container" className="text-secondary relative bg-pattern bg-cover bg-repeat bg-center" data-scroll-container>
             <Navbar />
             <Hero />
             <About />

@@ -29,7 +29,7 @@ const Hero = () => {
         <section ref={ref} id="hero-container"
             data-scroll-section
             onMouseEnter={changeColorBlack}
-            className={`${styles.paddingX} flex items-center py-6 relative w-full h-screen`}>
+            className={`${styles.paddingX} flex items-center py-6 relative z-0 w-full h-screen`}>
 
             <motion.div
                 className="bg-primary w-[200vw] h-[200vw] absolute top-[-100%] right-[-50vw] z-[-20] rounded-full"
