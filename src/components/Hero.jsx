@@ -29,7 +29,7 @@ const Hero = () => {
         <section ref={ref} id="hero-container"
             data-scroll-section
             onMouseEnter={changeColorBlack}
-            className={`${styles.paddingX} flex items-center py-6 relative z-0 w-full h-screen`}>
+            className={`${styles.paddingX} flex items-center py-6 relative z-0 w-full h-screen overflow-hidden`}>
 
             <motion.div
                 className="bg-primary w-[200vw] h-[200vw] absolute top-[-100%] right-[-50vw] z-[-20] rounded-full"
@@ -43,8 +43,8 @@ const Hero = () => {
                         heroText.split('').map((letter, letterIndex) => {
                             return (
                                 letterIndex === 4
-                                    ? <TextSpan key={letterIndex} br={true}>{letter}</TextSpan>
-                                    : <TextSpan key={letterIndex} br={false}>{letter}</TextSpan>
+                                    ? <TextSpan key={letterIndex} br={true} className="heroSpan">{letter}</TextSpan>
+                                    : <TextSpan key={letterIndex} br={false} className="heroSpan">{letter}</TextSpan>
                             )
                         })
                     }

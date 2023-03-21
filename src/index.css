@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;700&display=swap');
 
 @tailwind base;
@@ -16,7 +16,17 @@
   /* overflow: hidden; */
 }
 
-span {
+h1>span {
   font-family: 'Montserrat Alternates', sans-serif;
   display: inline-block;
+}
+
+.sectionTitle {
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+p>span {
+  font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  font-weight: 500;
 }
