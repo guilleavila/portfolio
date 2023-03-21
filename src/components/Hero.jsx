@@ -22,6 +22,7 @@ const Hero = () => {
 
     useEffect(() => {
         gsap.fromTo("#hero-title", 0.3, { opacity: 0, y: '10vh' }, { opacity: 1, delay: 0.3, y: '0vh' })
+        gsap.fromTo("#hero-subtitle", 0.3, { opacity: 0, y: '10vh' }, { opacity: 1, delay: 0.3, y: '0vh' })
         gsap.fromTo("#hero-p", 0.3, { opacity: 0, y: '10vh' }, { opacity: 1, delay: 0.4, y: '0vh' })
     }, [])
 
@@ -36,21 +37,25 @@ const Hero = () => {
                 style={{ top, scale }}
             />
 
-            <div className={`w-full flex flex-col justify-between items-start max-w-7xl mx-auto`}>
+            <div className={`w-full flex flex-col justify-between items-start max-w-7xl m-0`}>
 
                 <motion.h1 id="hero-title" className={`${styles.heroHeadText}`} style={{ opacity }} data-scroll>
                     {
-                        heroText.split('').map((letter, letterIndex) => {
-                            return (
-                                letterIndex === 4
-                                    ? <TextSpan key={letterIndex} br={true} className="heroSpan">{letter}</TextSpan>
-                                    : <TextSpan key={letterIndex} br={false} className="heroSpan">{letter}</TextSpan>
-                            )
-                        })
+                        heroText.split(' ').map((word, wordIndex) => (
+                            <span key={wordIndex}>
+                                {word.split('').map((letter, letterIndex) => {
+                                    return (
+                                        (wordIndex === 1 && letterIndex === 0)
+                                            ? <TextSpan key={letterIndex} br={true}>{letter}</TextSpan>
+                                            : <TextSpan key={letterIndex} br={false}>{letter}</TextSpan>
+                                    )
+                                })}&nbsp;
+                            </span>
+                        ))
                     }
                 </motion.h1>
 
-                <motion.p id="hero-p" style={{ opacity }} className={`${styles.heroSubText} mt-[10vh]`} data-scroll>Frontend Developer & UX Designer</motion.p>
+                <motion.p id="hero-p" style={{ opacity }} className={`${styles.heroSubText} mt-[10vh]`} data-scroll>Fullstack Developer & UX Designer</motion.p>
 
             </div>
         </section >

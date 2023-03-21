@@ -20,6 +20,8 @@ import {
 
 const heroText = "Hey! I'm Guille Ávila"
 
+const aboutText = "I am a Full Stack Developer and a UX Designer based in Madrid. I have a strong passion for creating immersive digital experiences, exploring and pushing the boundaries of what is possible."
+
 const navLinks = [
     {
         id: "about",
@@ -189,4 +191,4 @@ const projects = [
     }
 ]
 
-export { heroText, navLinks, technologies, experiences, projects };
+export { heroText, aboutText, navLinks, technologies, experiences, projects };

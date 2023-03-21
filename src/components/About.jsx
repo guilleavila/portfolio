@@ -1,19 +1,17 @@
 import gsap from "gsap"
 import { useContext, useEffect, useRef } from "react"
+import { aboutText } from "../constants"
 import { MouseContext } from "../context/mouse.context"
 import useOnScreen from "../hooks/useOnScreen"
 import { styles } from "../styles"
 import TextSpan from "./TextSpan"
 
-const text = 'I am a Full Stack Developer and a UX Designer based in Madrid. I have a strong passion for creating immersive digital experiences, exploring and pushing the boundaries of what is possible.'
-
 const About = () => {
 
-    const ref = useRef()
-
-    const reveal = useOnScreen(ref)
-
     const { changeColorGreen } = useContext(MouseContext)
+
+    const ref = useRef()
+    const reveal = useOnScreen(ref)
 
     useEffect(() => {
         if (reveal) {
@@ -24,32 +22,22 @@ const About = () => {
     return (
         <section
             onMouseEnter={changeColorGreen}
-            className={`${styles.paddingX} flex flex-row items-center relative w-full h-screen max-w-7xl mx-auto`}
+            className={`${styles.paddingX} flex flex-row items-center relative w-full h-screen`}
             data-scroll-section>
 
-            <h1 id="about-title" ref={ref} className={`${styles.sectionHeadText} basis-2/6`}>ABOUT</h1>
-
-            <p className={`${styles.sectionSubText} basis-4/6`}>
-
+            <p className={`${styles.sectionSubText}`}>
                 {
-                    text.split(' ').map((word, wordIndex) => (
-
-                        <span>&nbsp;
+                    aboutText.split(' ').map((word, wordIndex) => (
+                        <span key={wordIndex}>
                             {word.split('').map((letter, letterIndex) => {
                                 return (
                                     <TextSpan key={letterIndex} br={false}>{letter}</TextSpan>
                                 )
-                            })}
+                            })}&nbsp;
                         </span>
                     ))
                 }
-
             </p>
-
-            {/* <p>I am a Full Stack Developer and a UX Designer based in Madrid.
-                I have a strong passion for creating immersive digital experiences,
-                exploring and pushing the boundaries of what is possible.</p> */}
-
         </section >
     )
 }

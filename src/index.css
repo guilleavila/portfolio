@@ -17,6 +17,14 @@
 }
 
 h1>span {
+  display: inline-block;
+}
+
+h2>span {
+  display: inline-block;
+}
+
+h1>span>span {
   font-family: 'Montserrat Alternates', sans-serif;
   display: inline-block;
 }

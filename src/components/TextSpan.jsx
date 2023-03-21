@@ -17,9 +17,7 @@ const TextSpan = ({ children, br }) => {
             <motion.span
                 animate={controls}
                 onMouseOver={() => fillAnimation()}>
-                {
-                    children === " " && !br ? "\u00A0" : children
-                }
+                {children}
             </motion.span>
         </>
     )
