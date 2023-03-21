@@ -11,11 +11,12 @@ const About = () => {
     const { changeColorGreen } = useContext(MouseContext)
 
     const ref = useRef()
+
     const reveal = useOnScreen(ref)
 
     useEffect(() => {
         if (reveal) {
-            gsap.fromTo("#about-title", { opacity: 0 }, { opacity: 1, transform: "scale(1.2)", delay: 0.5 })
+            gsap.fromTo(".word-span", { y: 30 }, { opacity: 1, y: 0, delay: 0.5, stagger: 0.05 })
         }
     }, [reveal])
 
@@ -25,10 +26,10 @@ const About = () => {
             className={`${styles.paddingX} flex flex-row items-center relative w-full h-screen`}
             data-scroll-section>
 
-            <p className={`${styles.sectionSubText}`}>
+            <p className={`${styles.sectionSubText}`} ref={ref}>
                 {
                     aboutText.split(' ').map((word, wordIndex) => (
-                        <span key={wordIndex}>
+                        <span key={wordIndex} className='word-span' style={{ opacity: 0 }}>
                             {word.split('').map((letter, letterIndex) => {
                                 return (
                                     <TextSpan key={letterIndex} br={false}>{letter}</TextSpan>

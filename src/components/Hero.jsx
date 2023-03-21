@@ -16,13 +16,12 @@ const Hero = () => {
     const { changeColorBlack } = useContext(MouseContext)
 
     const { scrollYProgress } = useScroll()
-    const top = useTransform(scrollYProgress, [0, 2], ['-100vh', '-200vw'])
-    const scale = useTransform(scrollYProgress, [0, 2], ['100%', '0%'])
+    const top = useTransform(scrollYProgress, [0, 1], ['-50vh', '-100vh'])
+    const scale = useTransform(scrollYProgress, [0, 1], ['100%', '0%'])
     const opacity = useTransform(scrollYProgress, [0, 0.5], ['100%', '0%'])
 
     useEffect(() => {
         gsap.fromTo("#hero-title", 0.3, { opacity: 0, y: '10vh' }, { opacity: 1, delay: 0.3, y: '0vh' })
-        gsap.fromTo("#hero-subtitle", 0.3, { opacity: 0, y: '10vh' }, { opacity: 1, delay: 0.3, y: '0vh' })
         gsap.fromTo("#hero-p", 0.3, { opacity: 0, y: '10vh' }, { opacity: 1, delay: 0.4, y: '0vh' })
     }, [])
 
@@ -33,7 +32,7 @@ const Hero = () => {
             className={`${styles.paddingX} flex items-center py-6 relative z-0 w-full h-screen overflow-hidden`}>
 
             <motion.div
-                className="bg-primary w-[200vw] h-[200vw] absolute top-[-100%] right-[-50vw] z-[-20] rounded-full"
+                className="bg-primary w-[200vw] h-[200vh] absolute top-[-100vh] right-[-50vw] z-[-20] rounded-full"
                 style={{ top, scale }}
             />
 
