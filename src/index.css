@@ -38,3 +38,7 @@ p>span {
   display: inline-block;
   font-weight: 500;
 }
+
+hr {
+  border: 1px solid #8bd7c2;
+}

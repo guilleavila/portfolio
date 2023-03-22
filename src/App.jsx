@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import { About, Contact, Experience, Hero, Navbar, Projects, Tech } from './components'
+import { About, Contact, Experience, Hero, Navbar, Works, Tech } from './components'
 import useLocoScroll from './hooks/useLocoScroll'
 
 function App() {
@@ -36,12 +36,12 @@ function App() {
         {preloader ? (
           <div>Loading</div>
         ) : (
-          <div id="main-container" className="text-secondary relative bg-pattern bg-cover bg-repeat bg-center" data-scroll-container>
+          <div id="main-container" className="text-secondary relative bg-pattern bg-cover bg-fixed bg-center" data-scroll-container>
             <Navbar />
             <Hero />
             <About />
+            <Works />
             <Experience />
-            <Projects />
             <Tech />
             <Contact />
           </div>

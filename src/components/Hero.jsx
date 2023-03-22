@@ -37,27 +37,24 @@ const Hero = () => {
             />
 
             <div className={`w-full flex flex-col justify-between items-start max-w-7xl m-0`}>
-
                 <motion.h1 id="hero-title" className={`${styles.heroHeadText}`} style={{ opacity }} data-scroll>
-                    {
-                        heroText.split(' ').map((word, wordIndex) => (
-                            <span key={wordIndex}>
-                                {word.split('').map((letter, letterIndex) => {
-                                    return (
-                                        (wordIndex === 1 && letterIndex === 0)
-                                            ? <TextSpan key={letterIndex} br={true}>{letter}</TextSpan>
-                                            : <TextSpan key={letterIndex} br={false}>{letter}</TextSpan>
-                                    )
-                                })}&nbsp;
-                            </span>
-                        ))
-                    }
+                    {heroText.split(' ').map((word, wordIndex) => (
+                        <span key={wordIndex}>
+                            {word.split('').map((letter, letterIndex) => {
+                                return (
+                                    (wordIndex === 1 && letterIndex === 0)
+                                        ? <TextSpan key={letterIndex} br={true}>{letter}</TextSpan>
+                                        : <TextSpan key={letterIndex} br={false}>{letter}</TextSpan>
+                                )
+                            })}&nbsp;
+                        </span>
+                    ))}
                 </motion.h1>
 
                 <motion.p id="hero-p" style={{ opacity }} className={`${styles.heroSubText} mt-[10vh]`} data-scroll>Fullstack Developer & UX Designer</motion.p>
 
             </div>
-        </section >
+        </section>
     )
 }
 

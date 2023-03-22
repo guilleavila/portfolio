@@ -3,7 +3,7 @@ import Contact from "./Contact"
 import Experience from "./Experience"
 import Hero from "./Hero"
 import Navbar from "./Navbar"
-import Projects from "./Projects"
+import Works from "./Works"
 import Skills from "./Skills"
 import Tech from "./Tech"
 
@@ -13,7 +13,7 @@ export {
     Experience,
     Hero,
     Navbar,
-    Projects,
+    Works,
     Skills,
-    Tech,
+    Tech
 }

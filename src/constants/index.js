@@ -28,8 +28,8 @@ const navLinks = [
         title: "About",
     },
     {
-        id: "work",
-        title: "Work",
+        id: "works",
+        title: "Works",
     },
     {
         id: "experience",
@@ -155,8 +155,9 @@ const experiences = [
 const projects = [
     {
         name: "REEF",
-        description:
-            "REEF is an immersive web experience created with 2D illustrations and parallax animations that transports the user into a dystopian world in which global warming consequences have plunged cities into the depths of the ocean.",
+        header:
+            "Immersive web experience created with 2D illustrations and parallax animations.",
+        description: "Descripción del proyecto",
         tags: ["JavaScript", "GSAP", "ParticlesJS", "Webpack", "HTML 5", "CSS 3"],
         images: [],
         source_code_link: "https://github.com/guilleavila/reef",
@@ -164,8 +165,9 @@ const projects = [
     },
     {
         name: "Pooeblo",
-        description:
+        header:
             "Winning Hackshow SPA for discovering villages and managing house subscriptions and reservations.",
+        description: "Descripción del proyecto",
         tags: ["React", "Bootstrap", "MongoDB", "Express", "NodeJS", "Google Maps API", "Cloudinary", "MomentJS"],
         images: [],
         source_code_link: "https://github.com/guilleavila/pooeblo-client",
@@ -173,8 +175,9 @@ const projects = [
     },
     {
         name: "Sqube Darkness",
-        description:
+        header:
             "Survival platform game. Jump, hide, and dodge the enemies attacks.",
+        description: "Descripción del proyecto",
         tags: ["TypeScript", "Canvas", "HTML 5", "CSS 3"],
         images: [],
         source_code_link: "https://github.com/inesgarper/sqube-darkness-typescript",
@@ -182,8 +185,9 @@ const projects = [
     },
     {
         name: "Wetaca",
-        description:
+        header:
             "(WIP) Full-stack project that handles weekly food delivery subscriptions.",
+        description: "Descripción del proyecto",
         tags: ["TypeScript", "React", "GraphQL", "Apollo", "Node.Js", "JavaScript", "MongoDB"],
         images: [],
         source_code_link: "https://github.com/inesgarper/sqube-darkness-typescript",

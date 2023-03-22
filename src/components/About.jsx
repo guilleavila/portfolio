@@ -27,19 +27,17 @@ const About = () => {
             data-scroll-section>
 
             <p className={`${styles.sectionSubText}`} ref={ref}>
-                {
-                    aboutText.split(' ').map((word, wordIndex) => (
-                        <span key={wordIndex} className='word-span' style={{ opacity: 0 }}>
-                            {word.split('').map((letter, letterIndex) => {
-                                return (
-                                    <TextSpan key={letterIndex} br={false}>{letter}</TextSpan>
-                                )
-                            })}&nbsp;
-                        </span>
-                    ))
-                }
+                {aboutText.split(' ').map((word, wordIndex) => (
+                    <span key={wordIndex} className='word-span' style={{ opacity: 0 }}>
+                        {word.split('').map((letter, letterIndex) => {
+                            return (
+                                <TextSpan key={letterIndex} br={false}>{letter}</TextSpan>
+                            )
+                        })}&nbsp;
+                    </span>
+                ))}
             </p>
-        </section >
+        </section>
     )
 }
 
