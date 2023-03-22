@@ -11,7 +11,6 @@ const About = () => {
     const { changeColorGreen } = useContext(MouseContext)
 
     const ref = useRef()
-
     const reveal = useOnScreen(ref)
 
     useEffect(() => {
@@ -28,7 +27,7 @@ const About = () => {
 
             <p className={`${styles.sectionSubText}`} ref={ref}>
                 {aboutText.split(' ').map((word, wordIndex) => (
-                    <span key={wordIndex} className='word-span' style={{ opacity: 0 }}>
+                    <span key={wordIndex} className="word-span" style={{ opacity: 0 }}>
                         {word.split('').map((letter, letterIndex) => {
                             return (
                                 <TextSpan key={letterIndex} br={false}>{letter}</TextSpan>

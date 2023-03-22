@@ -25,10 +25,10 @@ const Project = ({ name, header, description, tags, images, source_code_link, li
                 <motion.h3 className={`${styles.listTitle}`}>{name}</motion.h3>
                 <motion.button
                     onClick={() => setIsOpen(!isOpen)}
-                    className={`${styles.listTitle} cursor-none`}
+                    className={`${styles.listTitle} text-tertiary cursor-none`}
                     animate={isOpen ? "open" : "closed"}
                     variants={toggleVariants}
-                    whileHover={{ color: "#8bd7c2", scale: 1.2 }}
+                    whileHover={{ color: "#3d3d3d", scale: 1.2 }}
                 >
                     +
                 </motion.button>
