@@ -1,7 +1,6 @@
 import gsap from "gsap"
-import { useContext, useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 import { aboutText } from "../constants"
-import { MouseContext } from "../context/mouse.context"
 import useOnScreen from "../hooks/useOnScreen"
 import { styles } from "../styles"
 import TextSpan from "./TextSpan"
@@ -11,8 +10,11 @@ const About = () => {
     const ref = useRef()
     const reveal = useOnScreen(ref)
 
+    const [animated, setAnimated] = useState(false)
+
     useEffect(() => {
-        if (reveal) {
+        if (reveal && !animated) {
+            setAnimated(true)
             gsap.fromTo(".word-span", { y: 30 }, { opacity: 1, y: 0, delay: 0.5, stagger: 0.05 })
         }
     }, [reveal])

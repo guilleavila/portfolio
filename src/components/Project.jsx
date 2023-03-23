@@ -3,9 +3,7 @@ import { useState } from "react"
 import { github } from "../assets"
 import { styles } from "../styles"
 
-const Project = ({ name, header, description, tags, image, source_code_link, live_demo_link }) => {
-
-    const [isOpen, setIsOpen] = useState(false)
+const Project = ({ name, header, description, tags, image, source_code_link, live_demo_link, openedId, setOpenedId }) => {
 
     const toggleVariants = {
         open: {
@@ -19,15 +17,17 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
     return (
         <motion.div
             layout
-            transition={{ layout: { duration: 0.3, type: "spring" } }}
+            transition={{
+                layout: { duration: 0.3 }
+            }}
             className="relative z-20"
         >
             <motion.div className="flex flex-row justify-between items-center" layout="position">
-                <h3 className={`${styles.listTitle}`}>{name}</h3>
+                <motion.h3 layout="position" className={`${styles.listTitle}`}>{name}</motion.h3>
                 <motion.button
-                    onClick={() => setIsOpen(!isOpen)}
+                    onClick={() => setOpenedId(name)}
                     className={`${styles.listTitle} text-tertiary cursor-none`}
-                    animate={isOpen ? "open" : "closed"}
+                    animate={openedId === name ? "open" : "closed"}
                     variants={toggleVariants}
                     whileHover={{ color: "#3d3d3d", scale: 1.2 }}
                 >
@@ -37,7 +37,7 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
 
             <motion.div layout="position">
                 <motion.p className={`${styles.listBody} font-light my-5`}>{header}</motion.p>
-                {isOpen && (
+                {openedId === name && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}

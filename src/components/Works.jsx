@@ -1,5 +1,5 @@
-import { motion } from "framer-motion"
-import { useEffect, useRef } from "react"
+import { LayoutGroup } from "framer-motion"
+import { useEffect, useRef, useState } from "react"
 import { projects } from "../constants"
 import { styles } from "../styles"
 import Project from "./Project"
@@ -8,25 +8,33 @@ import gsap from "gsap"
 
 const Works = () => {
 
+    const [animated, setAnimated] = useState(false)
+    const [openedId, setOpenedId] = useState(null)
+
     const ref = useRef()
     const reveal = useOnScreen(ref)
 
     useEffect(() => {
-        if (reveal) {
+        if (reveal && !animated) {
+            setAnimated(true)
             gsap.fromTo(".project", { y: 50 }, { opacity: 1, y: 0, stagger: 0.2, delay: 0.7, ease: "power4.out" })
         }
     }, [reveal])
 
     return (
-        <section className={`${styles.paddingX} flex flex-wrap justify-start items-center md:h-screen`}>
+        <section className={`${styles.paddingX} flex flex-wrap justify-between items-center`}>
             <h2 className={`${styles.sectionHeadText} md:basis-3/6`}>WORKS</h2>
+
             <ul ref={ref} className="md:basis-3/6 mt-10 md:mt-0">
-                {projects.map((project) => (
-                    <div key={project.name} className="project opacity-0 relative z-20">
-                        <Project {...project} />
-                    </div>
-                ))}
+                <LayoutGroup>
+                    {projects.map((project) => (
+                        <div key={project.name} className="project opacity-0 relative z-20">
+                            <Project {...project} openedId={openedId} setOpenedId={setOpenedId} />
+                        </div>
+                    ))}
+                </LayoutGroup>
             </ul>
+
         </section>
     )
 }

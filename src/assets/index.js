@@ -19,7 +19,7 @@ import close from './close.svg'
 import menu from './menu.svg'
 import pooeblo from './pooeblo.gif'
 import reef from './reef.gif'
-import sqube from './sqube.png'
+import sqube from './sqube.gif'
 import github from './tech/github.png'
 
 
