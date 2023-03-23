@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import { github } from "../assets"
 import { styles } from "../styles"
+import Button from "./Button"
 
 const Project = ({ name, header, description, tags, image, source_code_link, live_demo_link, openedId, setOpenedId }) => {
 
@@ -18,14 +19,16 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
         <motion.div
             layout
             transition={{
-                layout: { duration: 0.3 }
+                layout: { duration: 0.3 },
             }}
             className="relative z-20"
         >
-            <motion.div className="flex flex-row justify-between items-center" layout="position">
-                <motion.h3 layout="position" className={`${styles.listTitle}`}>{name}</motion.h3>
+            <motion.div layout="position" className="flex flex-row justify-between items-center">
+                <motion.h3 className={`${styles.listTitle}`}>{name}</motion.h3>
                 <motion.button
-                    onClick={() => setOpenedId(name)}
+                    onClick={() => {
+                        openedId === name ? setOpenedId(null) : setOpenedId(name)
+                    }}
                     className={`${styles.listTitle} text-tertiary cursor-none`}
                     animate={openedId === name ? "open" : "closed"}
                     variants={toggleVariants}
@@ -35,7 +38,7 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
                 </motion.button>
             </motion.div>
 
-            <motion.div layout="position">
+            <motion.div>
                 <motion.p className={`${styles.listBody} font-light my-5`}>{header}</motion.p>
                 {openedId === name && (
                     <motion.div
@@ -57,21 +60,8 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
                         </ul>
 
                         <div className="mt-6 flex gap-5">
-                            <motion.button whileHover={{ opacity: 1, scale: 1.05 }} className={`${styles.linkButton}`}>
-                                <a href={source_code_link} target="_blank" className="flex gap-2 items-center text-secondary">
-                                    <img src={github} alt="github-logo" className="w-4 h-4" />GitHub
-                                </a>
-                            </motion.button>
-
-                            {
-                                live_demo_link &&
-                                <motion.button whileHover={{ opacity: 1, scale: 1.05 }} className={`${styles.linkButton}`}>
-                                    <a href={live_demo_link} target="_blank" className="flex gap-2 items-center text-secondary">
-                                        Live Demo
-                                    </a>
-                                </motion.button>
-                            }
-
+                            <Button href={source_code_link} src={github} alt="github-logo">Github</Button>
+                            {live_demo_link && <Button href={live_demo_link}>Live Demo</Button>}
                         </div>
                     </motion.div>
                 )}
