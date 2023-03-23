@@ -17,6 +17,11 @@ import typescript from './tech/typescript.png'
 import xd from './tech/xd.png'
 import close from './close.svg'
 import menu from './menu.svg'
+import pooeblo from './pooeblo.gif'
+import reef from './reef.gif'
+import sqube from './sqube.png'
+import github from './tech/github.png'
+
 
 export {
     react,
@@ -37,5 +42,9 @@ export {
     indesign,
     figma,
     close,
-    menu
+    menu,
+    pooeblo,
+    reef,
+    sqube,
+    github
 }

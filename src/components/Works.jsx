@@ -12,7 +12,6 @@ const Works = () => {
     const reveal = useOnScreen(ref)
 
     useEffect(() => {
-        console.log(reveal)
         if (reveal) {
             gsap.fromTo(".project", { y: 50 }, { opacity: 1, y: 0, stagger: 0.2, delay: 0.7, ease: "power4.out" })
         }

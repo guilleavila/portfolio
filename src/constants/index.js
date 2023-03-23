@@ -16,6 +16,9 @@ import {
     xd,
     indesign,
     figma,
+    pooeblo,
+    reef,
+    sqube,
 } from "../assets"
 
 const heroText = "Hey! I'm Guille Ávila"
@@ -157,9 +160,9 @@ const projects = [
         name: "REEF",
         header:
             "Immersive web experience created with 2D illustrations and parallax animations.",
-        description: "Descripción del proyecto",
+        description: "Through an immersive experience, the user is transported into a dystopian world in which global warming consequences have plunged cities into the depths of the ocean",
         tags: ["JavaScript", "GSAP", "ParticlesJS", "Webpack", "HTML 5", "CSS 3"],
-        images: [],
+        image: reef,
         source_code_link: "https://github.com/guilleavila/reef",
         live_demo_link: "https://reef-immersive-experience.vercel.app/"
     },
@@ -167,9 +170,9 @@ const projects = [
         name: "Pooeblo",
         header:
             "Winning Hackshow SPA for discovering villages and managing house subscriptions and reservations.",
-        description: "Descripción del proyecto",
+        description: "Pooeblo was born with the aim of bringing young people closer to villages, without the need to invest in a property, and generating interest and benefit in villages with few inhabitants.",
         tags: ["React", "Bootstrap", "MongoDB", "Express", "NodeJS", "Google Maps API", "Cloudinary", "MomentJS"],
-        images: [],
+        image: pooeblo,
         source_code_link: "https://github.com/guilleavila/pooeblo-client",
         live_demo_link: "https://pooeblo.netlify.app/"
     },
@@ -177,9 +180,9 @@ const projects = [
         name: "Sqube Darkness",
         header:
             "Survival platform game. Jump, hide, and dodge the enemies attacks.",
-        description: "Descripción del proyecto",
+        description: "Based on the original Sqube Darkness, you are a cube that travels around a map dodging enemies. Among them, obstacles, bubbling holes, or even flying drones that, if they shine their spotlight on you, shoot you mercilessly. Good luck!",
         tags: ["TypeScript", "Canvas", "HTML 5", "CSS 3"],
-        images: [],
+        image: sqube,
         source_code_link: "https://github.com/inesgarper/sqube-darkness-typescript",
         live_demo_link: "https://inesgarper.github.io/sqube-darkness-typescript/"
     },
@@ -187,9 +190,9 @@ const projects = [
         name: "Wetaca",
         header:
             "(WIP) Full-stack project that handles weekly food delivery subscriptions.",
-        description: "Descripción del proyecto",
+        description: "This project aims to be a clone of the original Wetaca app. It is a SPA (Single Page Application) created with React, which queries data from an API through an Apollo server, using GraphQL as the query language.",
         tags: ["TypeScript", "React", "GraphQL", "Apollo", "Node.Js", "JavaScript", "MongoDB"],
-        images: [],
+        image: "",
         source_code_link: "https://github.com/inesgarper/sqube-darkness-typescript",
         live_demo_link: ""
     }

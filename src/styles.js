@@ -14,10 +14,12 @@ const styles = {
         "text-secondary xl:text-[60px] lg:text-[55px] md:text-[50px] sm:text-[45px] text-[35px] leading-tight ",
 
     listTitle:
-        "text-secondary uppercase xl:text-[43px] lg:text-[38px] md:text-[33px] text-[28px]",
+        "text-secondary uppercase xl:text-[33px] lg:text-[28px] md:text-[23px] text-[18px]",
     listBody:
-        "text-tertiary xl:text-[18px] lg:text-[16px] text-[14px]",
+        "text-tertiary 2xl:text-[18px] lg:text-[16px] text-[14px]",
 
+    linkButton:
+        "px-4 py-1 rounded-full border-secondary border opacity-50"
 };
 
 export { styles };

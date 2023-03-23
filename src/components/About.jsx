@@ -8,8 +8,6 @@ import TextSpan from "./TextSpan"
 
 const About = () => {
 
-    const { changeColorGreen } = useContext(MouseContext)
-
     const ref = useRef()
     const reveal = useOnScreen(ref)
 
@@ -21,7 +19,6 @@ const About = () => {
 
     return (
         <section
-            onMouseEnter={changeColorGreen}
             className={`${styles.paddingX} flex flex-row items-center relative w-full h-screen`}
             data-scroll-section>
 
