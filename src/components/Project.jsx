@@ -16,8 +16,6 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
         }
     }
 
-    console.log(image)
-
     return (
         <motion.div
             layout

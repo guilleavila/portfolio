@@ -1,13 +1,13 @@
 import { delay, motion } from "framer-motion"
 import { createContext, useEffect, useRef, useState } from "react"
 import useMouse from "@react-hook/mouse-position";
+import { isMobile } from "react-device-detect";
 
 const MouseContext = createContext()
 
 const MouseProviderWrapper = ({ children }) => {
 
     const [color, setColor] = useState("secondary")
-
     const mouseRef = useRef(null)
 
     const mouse = useMouse(mouseRef, {
@@ -33,6 +33,9 @@ const MouseProviderWrapper = ({ children }) => {
             width: 24,
             x: mouseXPosition - 12,
             y: mouseYPosition - 12
+        },
+        mobile: {
+            opacity: 0
         }
     }
 
@@ -52,7 +55,7 @@ const MouseProviderWrapper = ({ children }) => {
             <div ref={mouseRef}>
                 <motion.div
                     variants={variants}
-                    animate="default"
+                    animate={isMobile ? "mobile" : "default"}
                     transition={spring}
                     className={`${color === "primary" ? 'bg-green' : 'bg-secondary'} rounded-xl fixed top-0 left-0 z-20`}
                 />
