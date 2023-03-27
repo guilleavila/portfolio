@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import { About, Contact, Experience, Hero, Navbar, Works, Tech } from './components'
+import { About, Contact, Hero, Navbar, Works, Tech, Experiences } from './components'
 import { MouseContext } from './context/mouse.context'
 import useLocoScroll from './hooks/useLocoScroll'
 
@@ -46,7 +46,7 @@ function App() {
               onMouseEnter={changeColorGreen}>
               <About />
               <Works />
-              <Experience />
+              <Experiences />
               <Tech />
               <Contact />
             </div>

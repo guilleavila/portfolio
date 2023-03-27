@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 import gsap from "gsap"
 import { useState, useEffect, useRef } from "react"
 import { aboutText } from "../constants"
@@ -20,7 +21,7 @@ const About = () => {
     }, [reveal])
 
     return (
-        <section
+        <motion.section
             className={`${styles.paddingX} flex flex-row items-center relative w-full h-screen`}
             data-scroll-section>
 
@@ -35,7 +36,8 @@ const About = () => {
                     </span>
                 ))}
             </p>
-        </section>
+        </motion.section>
+
     )
 }
 

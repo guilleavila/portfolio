@@ -1,16 +1,16 @@
 import { LayoutGroup } from "framer-motion"
-import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
+import { useEffect, useRef, useState } from "react"
 import { isMobile } from "react-device-detect"
 
-import { projects } from "../constants"
-import { styles } from "../styles"
-import Project from "./Project"
+import { linkedin } from "../assets"
+import { experiences } from "../constants"
 import useOnScreen from "../hooks/useOnScreen"
-import { github } from "../assets"
+import { styles } from "../styles"
 import Button from "./Button"
+import WorkExperience from "./WorkExperience"
 
-const Works = () => {
+const Experiences = () => {
 
     const [animated, setAnimated] = useState(false)
     const [openedId, setOpenedId] = useState(null)
@@ -21,21 +21,23 @@ const Works = () => {
     useEffect(() => {
         if (reveal && !animated) {
             setAnimated(true)
-            gsap.fromTo(".project", { y: 50 }, { opacity: 1, y: 0, stagger: 0.2, delay: 0.7, ease: "power4.out" })
+            gsap.fromTo(".experience", { y: 50 }, { opacity: 1, y: 0, stagger: 0.2, delay: 0.7, ease: "power4.out" })
         }
     }, [reveal])
 
     return (
-        <section className={`${styles.paddingX} flex flex-wrap justify-between items-start mb-60`}>
+        <section className={`${styles.paddingX} flex flex-wrap justify-between items-start`}>
             <div className="flex-grow-0 md:basis-3/6">
-                <h2 className={`${styles.sectionHeadText}`}>WORKS</h2>
+                <h2 className={`${styles.sectionHeadText}`}>EXPERIENCE</h2>
                 {
                     !isMobile && (
                         <>
+
                             <p className="font-light text-tertiary max-w-[80%] mt-10 mb-5">
-                                This is a selection of some of the personal projects I have been working on recently. However, you can find some more in my github profile.
+                                My latest working experiences.
                             </p>
-                            <Button href="https://www.github.com/guilleavila" src={github} alt="github-logo">Github</Button>
+                            <Button href="https://www.linkedin.com/in/guillermo-%C3%A1vila/" src={linkedin} alt="linkedin-logo">LinkedIn</Button>
+
                         </>
                     )
                 }
@@ -43,9 +45,9 @@ const Works = () => {
 
             <ul ref={ref} className="md:basis-3/6 mt-10 md:mt-0">
                 <LayoutGroup>
-                    {projects.map((project) => (
-                        <div key={project.name} className="project opacity-0 relative z-20">
-                            <Project {...project} openedId={openedId} setOpenedId={setOpenedId} />
+                    {experiences.map((experience) => (
+                        <div key={experience.company_name} className="experience opacity-0 relative z-20">
+                            <WorkExperience {...experience} openedId={openedId} setOpenedId={setOpenedId} />
                         </div>
                     ))}
                 </LayoutGroup>
@@ -55,4 +57,4 @@ const Works = () => {
     )
 }
 
-export default Works
+export default Experiences

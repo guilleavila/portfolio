@@ -18,7 +18,6 @@ module.exports = {
       },
       backgroundImage: {
         "pattern": "url('/src/assets/bg.png')",
-        "navPattern": "url('/src/assets/navbg.png')"
       },
     },
   },

@@ -21,6 +21,7 @@ import pooeblo from './pooeblo.gif'
 import reef from './reef.gif'
 import sqube from './sqube.gif'
 import github from './tech/github.png'
+import linkedin from './tech/linkedin.png'
 
 
 export {
@@ -46,5 +47,6 @@ export {
     pooeblo,
     reef,
     sqube,
-    github
+    github,
+    linkedin
 }

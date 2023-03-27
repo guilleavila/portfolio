@@ -1,9 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion"
-import { github } from "../assets"
 import { styles } from "../styles"
 import Button from "./Button"
 
-const Project = ({ name, header, description, tags, image, source_code_link, live_demo_link, openedId, setOpenedId }) => {
+
+const WorkExperience = ({ title, company_name, date, points, openedId, setOpenedId }) => {
 
     const toggleVariants = {
         open: {
@@ -19,18 +19,20 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
             transition={{
                 layout: { duration: 0.3 },
             }}
-            className="relative z-20"
+            className="relative z-20 w-[90vw] md:w-auto"
         >
 
-            <motion.div layout='position' className="flex flex-row justify-between items-center">
-                <motion.h3 layout='position' className={`${styles.listTitle}`}>{name}</motion.h3>
+            <motion.div layout='position' className="flex flex-row flex-grow justify-between items-center">
+                {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio consequuntur debitis amet ex ducimus. Ipsa laboriosam obcaecati accusamus itaque tenetur?</p> */}
+
+                <motion.h3 layout='position' className={`${styles.listTitle}`}>{title}</motion.h3>
                 <motion.button
                     layout='position'
                     onClick={() => {
-                        openedId === name ? setOpenedId(null) : setOpenedId(name)
+                        openedId === company_name ? setOpenedId(null) : setOpenedId(company_name)
                     }}
                     className={`${styles.listTitle} text-tertiary cursor-none`}
-                    animate={openedId === name ? "open" : "closed"}
+                    animate={openedId === company_name ? "open" : "closed"}
                     variants={toggleVariants}
                     whileHover={{ color: "#3d3d3d", scale: 1.2 }}
                 >
@@ -38,34 +40,29 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
                 </motion.button>
             </motion.div>
 
-            <motion.p layout='position' className={`${styles.listBody} font-light my-5`}>{header}</motion.p>
+            <motion.div className="flex justify-between items-center">
+                <motion.p layout='position' className={`${styles.listBody} font-light my-5`}>{company_name.toUpperCase()}</motion.p>
+                <motion.p layout='position' className={`${styles.listBody} font-light my-5 opacity-70`}>{date}</motion.p>
+            </motion.div>
 
-            <motion.div layout>
+            <motion.div layout="position">
                 <AnimatePresence>
-                    {openedId === name && (
+                    {openedId === company_name && (
                         <motion.div
                             key="content" exit={{ y: "-10%", opacity: 0, transition: { duration: 0.2 } }}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <p className={`${styles.listBody} font-light my-5`}>{description}</p>
-                            {image && <img src={image} alt={name} className="w-full mt-6 z-0 relative" />}
-
                             <ul className="flex flex-wrap gap-x-5 gap-y-2 mt-5">
-                                {tags.map((tag) => (
-                                    <li key={tag}
+                                {points.map((point) => (
+                                    <li key={point}
                                         className="bg-opacity-30 bg-primary text-tertiary rounded-full px-4 py-1 md:text-[14px] text-[12px]"
                                     >
-                                        # {tag}
+                                        {point}
                                     </li>
                                 ))}
                             </ul>
-
-                            <div className="mt-6 flex gap-5">
-                                <Button href={source_code_link} src={github} alt="github-logo">Github</Button>
-                                {live_demo_link && <Button href={live_demo_link}>Live Demo</Button>}
-                            </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
@@ -76,4 +73,4 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
     )
 }
 
-export default Project
+export default WorkExperience
