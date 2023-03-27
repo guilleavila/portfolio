@@ -17,15 +17,16 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
 
     return (
         <motion.div
-            layout
             transition={{
                 layout: { duration: 0.3 },
             }}
             className="relative z-20"
         >
-            <motion.div layout="position" className="flex flex-row justify-between items-center">
-                <motion.h3 className={`${styles.listTitle}`}>{name}</motion.h3>
+
+            <motion.div layout='position' className="flex flex-row justify-between items-center">
+                <motion.h3 layout='position' className={`${styles.listTitle}`}>{name}</motion.h3>
                 <motion.button
+                    layout='position'
                     onClick={() => {
                         openedId === name ? setOpenedId(null) : setOpenedId(name)
                     }}
@@ -38,8 +39,9 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
                 </motion.button>
             </motion.div>
 
-            <motion.div>
-                <motion.p className={`${styles.listBody} font-light my-5`}>{header}</motion.p>
+            <motion.p layout='position' className={`${styles.listBody} font-light my-5`}>{header}</motion.p>
+
+            <motion.div layout>
                 {openedId === name && (
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -65,7 +67,7 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
                         </div>
                     </motion.div>
                 )}
-                <motion.hr className="my-5" />
+                <motion.hr layout="position" className="my-5" />
             </motion.div>
 
         </motion.div >
