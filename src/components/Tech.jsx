@@ -15,14 +15,14 @@ const Tech = () => {
     useEffect(() => {
         const elements = document.getElementById("cards")
         gsap.set(elements.children, { opacity: 0 })
-        if (reveal && !animated) {
+        if (reveal) {
             setAnimated(true)
             gsap.fromTo(elements.children, { y: 50 }, { opacity: 1, y: 0, stagger: 0.2, delay: 0.7, ease: "power4.out" })
         }
     }, [reveal])
 
     return (
-        <section className={`${styles.paddingX} mb-60`}>
+        <section className={`${styles.paddingX} mb-[70vh]`}>
             <h3 className={`${styles.sectionHeadText}`}>SKILLS</h3>
 
             <div ref={ref} id="cards" className="cards flex flex-wrap justify-between items-start gap-10">
