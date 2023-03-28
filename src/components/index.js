@@ -4,7 +4,6 @@ import Experiences from "./Experiences"
 import Hero from "./Hero"
 import Navbar from "./Navbar"
 import Works from "./Works"
-import Skills from "./Skills"
 import Tech from "./Tech"
 
 export {
@@ -14,6 +13,5 @@ export {
     Hero,
     Navbar,
     Works,
-    Skills,
     Tech
 }

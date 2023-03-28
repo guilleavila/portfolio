@@ -54,10 +54,10 @@ const WorkExperience = ({ title, company_name, date, points, openedId, setOpened
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <ul className="flex flex-wrap gap-x-5 gap-y-2 mt-5">
+                            <ul>
                                 {points.map((point) => (
                                     <li key={point}
-                                        className="bg-opacity-30 bg-primary text-tertiary rounded-full px-4 py-1 md:text-[14px] text-[12px]"
+                                        className="text-tertiary py-2 md:text-[14px] text-[12px] points"
                                     >
                                         {point}
                                     </li>
@@ -67,7 +67,7 @@ const WorkExperience = ({ title, company_name, date, points, openedId, setOpened
                     )}
                 </AnimatePresence>
                 <motion.hr layout="position" className="my-5" />
-            </motion.div>
+            </motion.div >
 
         </motion.div >
     )

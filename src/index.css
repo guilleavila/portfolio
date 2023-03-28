@@ -42,3 +42,12 @@ p>span {
 hr {
   border: 1px solid #8bd7c2;
 }
+
+.points::before {
+  content: "•";
+  font-weight: bold;
+  font-size: 14px;
+  color: #8bd7c2;
+  display: inline-block;
+  width: 1em;
+}

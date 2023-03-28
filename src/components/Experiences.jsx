@@ -26,7 +26,7 @@ const Experiences = () => {
     }, [reveal])
 
     return (
-        <section className={`${styles.paddingX} flex flex-wrap justify-between items-start`}>
+        <section className={`${styles.paddingX} flex flex-wrap justify-between items-start mb-60`}>
             <div className="flex-grow-0 md:basis-3/6">
                 <h2 className={`${styles.sectionHeadText}`}>EXPERIENCE</h2>
                 {
