@@ -15,7 +15,7 @@ const Experiences = () => {
     const [animated, setAnimated] = useState(false)
     const [openedId, setOpenedId] = useState(null)
 
-    const ref = useRef()
+    const ref = useRef(null)
     const reveal = useOnScreen(ref)
 
     useEffect(() => {

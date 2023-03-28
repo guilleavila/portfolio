@@ -16,8 +16,8 @@ const Hero = () => {
     const { changeColorBlack } = useContext(MouseContext)
 
     const { scrollYProgress } = useScroll()
-    const top = useTransform(scrollYProgress, [0, 1], ['-50vh', '-100vh'])
-    const scale = useTransform(scrollYProgress, [0, 1], ['100%', '0%'])
+    const top = useTransform(scrollYProgress, [0, 1], ['-50vh', '-150vh'])
+    const scale = useTransform(scrollYProgress, [0, 1], ['100%', '-200%'])
     const opacity = useTransform(scrollYProgress, [0, 0.5], ['100%', '0%'])
 
     useEffect(() => {
