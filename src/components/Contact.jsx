@@ -1,10 +1,10 @@
-import { motion, useScroll, useTransform } from "framer-motion"
 import { useContext, useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 
 import { styles } from "../styles"
 import useOnScreen from "../hooks/useOnScreen"
 import { MouseContext } from "../context/mouse.context"
+import ContactForm from "./ContactForm"
 
 const Contact = () => {
 
@@ -32,8 +32,10 @@ const Contact = () => {
                 className={`${styles.paddingX} h-screen flex flex-wrap justify-between items-center relative z-20`}
                 onMouseEnter={changeColorBlack}
             >
-                <h2 className={`${styles.sectionHeadText} text-secondary`}>CONTACT</h2>
-                <p>contenido</p>
+                <h2 className={`${styles.sectionHeadText} text-secondary basis-3/6`}>CONTACT</h2>
+                <div className="basis-3/6">
+                    <ContactForm />
+                </div>
             </div>
 
         </section>

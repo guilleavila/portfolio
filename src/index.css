@@ -55,3 +55,18 @@ hr {
 .card {
   opacity: 0;
 }
+
+.bg-transparent {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+textarea,
+input {
+  border-bottom: 1px solid #3d3d3d;
+  padding-bottom: 5px;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
