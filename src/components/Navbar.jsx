@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { styles } from "../styles"
 import { navLinks } from "../constants"
 import { rubberduck, close, menu } from '../assets'
-import { motion, useAnimationControls } from "framer-motion"
+import { motion } from "framer-motion"
 
 const Navbar = () => {
 

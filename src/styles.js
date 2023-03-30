@@ -19,7 +19,7 @@ const styles = {
         "text-tertiary 2xl:text-[18px] lg:text-[16px] text-[14px]",
 
     linkButton:
-        "px-4 py-1 rounded-full border-secondary border opacity-50",
+        "px-4 py-1 rounded-full border-secondary border opacity-70",
 
     inputTitle:
         "text-secondary xl:text-[28px] lg:text-[24px] text-[18px]"
