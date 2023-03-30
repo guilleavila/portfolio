@@ -53,11 +53,11 @@ const ContactForm = () => {
     return (
         <form ref={formRef}
             onSubmit={handleSubmit}
-            className="flex flex-col gap-8 w-full"
+            className="flex flex-col gap-8 w-[90vw] md:w-auto"
         >
 
             <label className="flex flex-col">
-                <span className="text-secondary">Your Name</span>
+                <span className={`${styles.inputTitle} text-secondary`}>Your Name</span>
                 <input type="text" name="name" value={form.name} onChange={handleChange}
                     placeholder="What's your name?"
                     className="placeholder:text-tertiary text-secondary bg-transparent mt-3"
@@ -65,7 +65,7 @@ const ContactForm = () => {
             </label>
 
             <label className="flex flex-col">
-                <span className="text-secondary">Your Email</span>
+                <span className={`${styles.inputTitle} text-secondary`}>Your Email</span>
                 <input type="email" name="email" value={form.email} onChange={handleChange}
                     placeholder="What's your email?"
                     className="placeholder:text-tertiary text-secondary bg-transparent mt-3"
@@ -73,7 +73,7 @@ const ContactForm = () => {
             </label>
 
             <label className="flex flex-col">
-                <span className="text-secondary">Your Message</span>
+                <span className={`${styles.inputTitle} text-secondary`}>Your Message</span>
                 <textarea name="message" rows="7" value={form.message} onChange={handleChange}
                     placeholder="What do you want to say?"
                     className="placeholder:text-tertiary text-secondary bg-transparent mt-3"
