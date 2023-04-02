@@ -5,6 +5,7 @@ import { isMobile } from "react-device-detect"
 
 import { linkedin } from "../assets"
 import { experiences } from "../constants"
+import { SectionWrapper } from "../hoc"
 import useOnScreen from "../hooks/useOnScreen"
 import { styles } from "../styles"
 import Button from "./Button"
@@ -57,4 +58,4 @@ const Experiences = () => {
     )
 }
 
-export default Experiences
+export default SectionWrapper(Experiences, "experience")

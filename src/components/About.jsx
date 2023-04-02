@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import gsap from "gsap"
 import { useState, useEffect, useRef } from "react"
 import { aboutText } from "../constants"
+import { SectionWrapper } from "../hoc"
 import useOnScreen from "../hooks/useOnScreen"
 import { styles } from "../styles"
 import TextSpan from "./TextSpan"
@@ -41,4 +42,4 @@ const About = () => {
     )
 }
 
-export default About
+export default SectionWrapper(About, "about")

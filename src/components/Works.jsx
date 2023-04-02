@@ -9,6 +9,7 @@ import Project from "./Project"
 import useOnScreen from "../hooks/useOnScreen"
 import { github } from "../assets"
 import Button from "./Button"
+import { SectionWrapper } from "../hoc"
 
 const Works = () => {
 
@@ -55,4 +56,4 @@ const Works = () => {
     )
 }
 
-export default Works
+export default SectionWrapper(Works, "works")

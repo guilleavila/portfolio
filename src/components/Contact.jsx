@@ -5,6 +5,7 @@ import { styles } from "../styles"
 import useOnScreen from "../hooks/useOnScreen"
 import { MouseContext } from "../context/mouse.context"
 import ContactForm from "./ContactForm"
+import { SectionWrapper } from "../hoc"
 
 const Contact = () => {
 
@@ -44,4 +45,4 @@ const Contact = () => {
     )
 }
 
-export default Contact
+export default SectionWrapper(Contact, "contact")
