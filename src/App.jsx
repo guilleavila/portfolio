@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { About, Contact, Hero, Navbar, Works, Tech, Experiences } from './components'
+import Footer from './components/Footer'
 import { MouseContext } from './context/mouse.context'
 import useLocoScroll from './hooks/useLocoScroll'
 
@@ -49,6 +50,7 @@ function App() {
               <Experiences />
               <Tech />
               <Contact />
+              <Footer />
             </div>
           </div>
         )}

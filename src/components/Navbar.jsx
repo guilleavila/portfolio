@@ -1,18 +1,21 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 
 import { styles } from "../styles"
 import { navLinks } from "../constants"
 import { rubberduck, close, menu } from '../assets'
 import { motion } from "framer-motion"
+import { MouseContext } from "../context/mouse.context"
 
 const Navbar = () => {
 
     const [active, setActive] = useState('')
     const [toggle, setToggle] = useState(false)
 
+    const { color } = useContext(MouseContext)
+
     return (
-        <nav className={`${styles.paddingX} w-full flex flex-row items-center justify-start py-6 fixed z-20 top-0`}>
+        <nav className={`${styles.paddingX} w-full flex flex-row items-center justify-start py-6 fixed z-30 top-0  ${color === "primary" ? "bg-navPattern bg-cover bg-fixed bg-center" : ""}`}>
             <div className="w-full flex justify-between items-center">
 
                 {/* LOGO + NAME */}

@@ -51,7 +51,7 @@ const MouseProviderWrapper = ({ children }) => {
 
     return (
 
-        <MouseContext.Provider value={{ changeColorBlack, changeColorGreen }}>
+        <MouseContext.Provider value={{ color, changeColorBlack, changeColorGreen }}>
             <div ref={mouseRef}>
                 <motion.div
                     variants={variants}
