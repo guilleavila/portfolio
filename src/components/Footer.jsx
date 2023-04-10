@@ -1,7 +1,7 @@
+import Button from "./Button"
 import { motion } from "framer-motion"
 import { github, linkedin } from "../assets"
 import { styles } from "../styles"
-import Button from "./Button"
 
 const Footer = () => {
     return (

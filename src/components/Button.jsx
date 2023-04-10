@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import { motion } from "framer-motion"
 import { styles } from "../styles"
 
@@ -10,6 +11,13 @@ const Button = ({ href, src, alt, children }) => {
             </a>
         </motion.button>
     )
+}
+
+Button.propTypes = {
+    href: PropTypes.string.isRequired,
+    src: PropTypes.string,
+    alt: PropTypes.string,
+    children: PropTypes.string.isRequired
 }
 
 export default Button

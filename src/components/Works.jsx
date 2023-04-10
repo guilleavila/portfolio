@@ -1,14 +1,14 @@
+import gsap from "gsap"
 import { LayoutGroup } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
-import gsap from "gsap"
 import { isMobile } from "react-device-detect"
 
+import Project from "./Project"
+import Button from "./Button"
+import useOnScreen from "../hooks/useOnScreen"
 import { projects } from "../constants"
 import { styles } from "../styles"
-import Project from "./Project"
-import useOnScreen from "../hooks/useOnScreen"
 import { github } from "../assets"
-import Button from "./Button"
 import { SectionWrapper } from "../hoc"
 
 const Works = () => {

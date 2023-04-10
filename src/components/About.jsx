@@ -1,11 +1,11 @@
-import { motion } from "framer-motion"
+import useOnScreen from "../hooks/useOnScreen"
 import gsap from "gsap"
+import TextSpan from "./TextSpan"
 import { useState, useEffect, useRef } from "react"
+import { motion } from "framer-motion"
 import { aboutText } from "../constants"
 import { SectionWrapper } from "../hoc"
-import useOnScreen from "../hooks/useOnScreen"
 import { styles } from "../styles"
-import TextSpan from "./TextSpan"
 
 const About = () => {
 

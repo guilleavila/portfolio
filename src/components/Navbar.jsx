@@ -7,26 +7,8 @@ import { rubberduck, close, menu } from '../assets'
 import { AnimatePresence, motion } from "framer-motion"
 import { MouseContext } from "../context/mouse.context"
 import gsap from "gsap"
+import { mobile } from "../utils/motion"
 
-const mobile = {
-    opened: {
-        opacity: 1,
-        height: '100vh',
-        transition: {
-            duration: 0.3,
-            ease: "easeInOut",
-        }
-    },
-    closed: {
-        opacity: 0,
-        height: 0,
-        transition: {
-            ease: "easeInOut",
-            duration: 0.3,
-            delay: 0.5
-        }
-    }
-}
 
 const Navbar = () => {
 
@@ -78,7 +60,6 @@ const Navbar = () => {
 
                 {/* MOBILE NAVLINKS */}
                 <div className="md:hidden flex flex-1 justify-end items-center">
-                    {/* ICONO */}
                     <img
                         src={toggle ? close : menu}
                         alt="menu"
@@ -86,13 +67,11 @@ const Navbar = () => {
                         onClick={() => setToggle(!toggle)}
                     />
 
-                    {/* MENÚ */}
                     <AnimatePresence>
                         {toggle && (
                             <motion.div
-                                // className={`${!toggle ? 'hidden' : 'flex'} p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10`}
                                 className="absolute w-full bg-secondary right-0 top-0 z-10"
-                                variants={mobile}
+                                variants={mobile()}
                                 initial={{ height: 0, opacity: 0 }}
                                 animate="opened"
                                 exit="closed"

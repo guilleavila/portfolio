@@ -2,13 +2,11 @@ import { useEffect, useState } from "react"
 
 const useOnScreen = (ref, threshold = 0.3) => {
 
-    // store whether the element is visible
     const [isIntersecting, setIntersecting] = useState(false)
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                // update state when observer callback fires
                 setIntersecting(entry?.isIntersecting ?? false)
             },
             {

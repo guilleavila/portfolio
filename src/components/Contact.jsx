@@ -1,10 +1,10 @@
-import { useContext, useEffect, useRef, useState } from "react"
 import gsap from "gsap"
+import { useContext, useEffect, useRef, useState } from "react"
 
-import { styles } from "../styles"
 import useOnScreen from "../hooks/useOnScreen"
-import { MouseContext } from "../context/mouse.context"
 import ContactForm from "./ContactForm"
+import { styles } from "../styles"
+import { MouseContext } from "../context/mouse.context"
 import { SectionWrapper } from "../hoc"
 
 const Contact = () => {

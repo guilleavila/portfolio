@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import { motion, useAnimationControls } from "framer-motion"
 
 const TextSpan = ({ children, br }) => {
@@ -21,6 +22,11 @@ const TextSpan = ({ children, br }) => {
             </motion.span>
         </>
     )
+}
+
+TextSpan.propTypes = {
+    children: PropTypes.string.isRequired,
+    br: PropTypes.bool.isRequired
 }
 
 export default TextSpan

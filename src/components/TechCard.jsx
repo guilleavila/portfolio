@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import { technologies } from "../constants"
 import { styles } from "../styles"
 
@@ -18,6 +19,10 @@ const TechCard = ({ type }) => {
 
         </div>
     )
+}
+
+TechCard.propTypes = {
+    type: PropTypes.string.isRequired,
 }
 
 export default TechCard

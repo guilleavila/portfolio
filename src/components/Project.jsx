@@ -1,18 +1,11 @@
+import Button from "./Button"
+import PropTypes from "prop-types"
 import { AnimatePresence, motion } from "framer-motion"
 import { github } from "../assets"
 import { styles } from "../styles"
-import Button from "./Button"
+import { toggleVariants } from "../utils/motion"
 
 const Project = ({ name, header, description, tags, image, source_code_link, live_demo_link, openedId, setOpenedId }) => {
-
-    const toggleVariants = {
-        open: {
-            rotate: 135
-        },
-        closed: {
-            rotate: 0
-        }
-    }
 
     return (
         <motion.div
@@ -31,7 +24,7 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
                     }}
                     className={`${styles.listTitle} text-tertiary cursor-none`}
                     animate={openedId === name ? "open" : "closed"}
-                    variants={toggleVariants}
+                    variants={toggleVariants()}
                     whileHover={{ color: "#3d3d3d", scale: 1.2 }}
                 >
                     +
@@ -74,6 +67,18 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
 
         </motion.div >
     )
+}
+
+Project.propTypes = {
+    name: PropTypes.string.isRequired,
+    header: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    image: PropTypes.string.isRequired,
+    source_code_link: PropTypes.string.isRequired,
+    live_demo_link: PropTypes.string.isRequired,
+    openedId: PropTypes.string,
+    setOpenedId: PropTypes.func.isRequired,
 }
 
 export default Project

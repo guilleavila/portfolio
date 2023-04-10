@@ -2,7 +2,6 @@ import emailjs from "@emailjs/browser"
 import { motion } from "framer-motion"
 import { useRef, useState } from "react"
 import { styles } from "../styles"
-import Button from "./Button"
 
 const ContactForm = () => {
 

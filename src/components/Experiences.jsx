@@ -1,15 +1,15 @@
-import { LayoutGroup } from "framer-motion"
 import gsap from "gsap"
+import { LayoutGroup } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import { isMobile } from "react-device-detect"
 
+import useOnScreen from "../hooks/useOnScreen"
+import Button from "./Button"
+import WorkExperience from "./WorkExperience"
 import { linkedin } from "../assets"
 import { experiences } from "../constants"
 import { SectionWrapper } from "../hoc"
-import useOnScreen from "../hooks/useOnScreen"
 import { styles } from "../styles"
-import Button from "./Button"
-import WorkExperience from "./WorkExperience"
 
 const Experiences = () => {
 

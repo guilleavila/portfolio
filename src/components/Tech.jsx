@@ -1,8 +1,8 @@
 import gsap from "gsap"
-import { useEffect, useRef } from "react"
 import useOnScreen from "../hooks/useOnScreen"
-import { styles } from "../styles"
 import TechCard from "./TechCard"
+import { useEffect, useRef } from "react"
+import { styles } from "../styles"
 
 
 const Tech = () => {

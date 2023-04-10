@@ -1,18 +1,11 @@
+import PropTypes from "prop-types"
 import { AnimatePresence, motion } from "framer-motion"
 import { styles } from "../styles"
+import { toggleVariants } from "../utils/motion"
 import Button from "./Button"
 
 
 const WorkExperience = ({ title, company_name, date, points, openedId, setOpenedId }) => {
-
-    const toggleVariants = {
-        open: {
-            rotate: 135
-        },
-        closed: {
-            rotate: 0
-        }
-    }
 
     return (
         <motion.div
@@ -23,7 +16,6 @@ const WorkExperience = ({ title, company_name, date, points, openedId, setOpened
         >
 
             <motion.div layout='position' className="flex flex-row flex-grow justify-between items-center">
-                {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio consequuntur debitis amet ex ducimus. Ipsa laboriosam obcaecati accusamus itaque tenetur?</p> */}
 
                 <motion.h3 layout='position' className={`${styles.listTitle}`}>{title}</motion.h3>
                 <motion.button
@@ -33,7 +25,7 @@ const WorkExperience = ({ title, company_name, date, points, openedId, setOpened
                     }}
                     className={`${styles.listTitle} text-tertiary cursor-none`}
                     animate={openedId === company_name ? "open" : "closed"}
-                    variants={toggleVariants}
+                    variants={toggleVariants()}
                     whileHover={{ color: "#3d3d3d", scale: 1.2 }}
                 >
                     +
@@ -71,6 +63,15 @@ const WorkExperience = ({ title, company_name, date, points, openedId, setOpened
 
         </motion.div >
     )
+}
+
+WorkExperience.propTypes = {
+    title: PropTypes.string.isRequired,
+    company_name: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    points: PropTypes.arrayOf(PropTypes.string).isRequired,
+    openedId: PropTypes.string,
+    setOpenedId: PropTypes.func.isRequired
 }
 
 export default WorkExperience
