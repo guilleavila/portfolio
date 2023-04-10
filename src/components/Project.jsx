@@ -22,7 +22,7 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
                     onClick={() => {
                         openedId === name ? setOpenedId(null) : setOpenedId(name)
                     }}
-                    className={`${styles.listTitle} text-tertiary cursor-none`}
+                    className={`${styles.listTitle} text-tertiary cursor-none w-12`}
                     animate={openedId === name ? "open" : "closed"}
                     variants={toggleVariants()}
                     whileHover={{ color: "#3d3d3d", scale: 1.2 }}
