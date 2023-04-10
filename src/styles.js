@@ -22,7 +22,10 @@ const styles = {
         "px-4 py-1 rounded-full border-secondary border opacity-70",
 
     inputTitle:
-        "text-secondary xl:text-[28px] lg:text-[24px] text-[18px]"
+        "text-secondary xl:text-[28px] lg:text-[24px] text-[18px]",
+
+    mobileNavText:
+        "text-white uppercase xl:text-[33px] lg:text-[28px] md:text-[23px] text-[18px]"
 };
 
 export { styles };
