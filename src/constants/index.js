@@ -123,6 +123,16 @@ const technologies = {
 
 const experiences = [
     {
+        title: "Full Stack Developer",
+        company_name: "Oratrex",
+        date: "March 2023 - Present",
+        points: [
+            "Full stack development",
+            "UX Research",
+            "UI Design, wireframing and prototyping"
+        ],
+    },
+    {
         title: "Teacher Assistant",
         company_name: "Ironhack",
         date: "March 2022 - May 2022",
