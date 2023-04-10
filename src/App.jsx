@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <div id="main-container" className="text-secondary relative bg-cover bg-repeat-y bg-pattern bg-fixed" data-scroll-container>
+        <div id="main-container" className="text-secondary relative bg-pattern bg-contain bg-repeat" data-scroll-container>
           <Navbar />
           <Hero />
           <div
