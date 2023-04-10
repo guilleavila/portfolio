@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { github } from "../assets"
 import { styles } from "../styles"
 import { toggleVariants } from "../utils/motion"
+import ListElementTitle from "./ListElementTitle"
 
 const Project = ({ name, header, description, tags, image, source_code_link, live_demo_link, openedId, setOpenedId }) => {
 
@@ -15,21 +16,7 @@ const Project = ({ name, header, description, tags, image, source_code_link, liv
             className="relative z-20"
         >
 
-            <motion.div layout='position' className="flex flex-row justify-between items-center">
-                <motion.h3 layout='position' className={`${styles.listTitle}`}>{name}</motion.h3>
-                <motion.button
-                    layout='position'
-                    onClick={() => {
-                        openedId === name ? setOpenedId(null) : setOpenedId(name)
-                    }}
-                    className={`${styles.listTitle} text-tertiary cursor-none w-12`}
-                    animate={openedId === name ? "open" : "closed"}
-                    variants={toggleVariants()}
-                    whileHover={{ color: "#3d3d3d", scale: 1.2 }}
-                >
-                    +
-                </motion.button>
-            </motion.div>
+            <ListElementTitle name={name} openedId={openedId} setOpenedId={setOpenedId} />
 
             <motion.p layout='position' className={`${styles.listBody} font-light my-5`}>{header}</motion.p>
 

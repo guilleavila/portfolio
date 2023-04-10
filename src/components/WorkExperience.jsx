@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { styles } from "../styles"
 import { toggleVariants } from "../utils/motion"
 import Button from "./Button"
+import ListElementTitle from "./ListElementTitle"
 
 
 const WorkExperience = ({ title, company_name, date, points, openedId, setOpenedId }) => {
@@ -15,22 +16,8 @@ const WorkExperience = ({ title, company_name, date, points, openedId, setOpened
             className="relative z-20 w-[90vw] md:w-auto"
         >
 
-            <motion.div layout='position' className="flex flex-row flex-grow justify-between items-center">
+            <ListElementTitle name={company_name} openedId={openedId} setOpenedId={setOpenedId} />
 
-                <motion.h3 layout='position' className={`${styles.listTitle}`}>{title}</motion.h3>
-                <motion.button
-                    layout='position'
-                    onClick={() => {
-                        openedId === company_name ? setOpenedId(null) : setOpenedId(company_name)
-                    }}
-                    className={`${styles.listTitle} text-tertiary cursor-none`}
-                    animate={openedId === company_name ? "open" : "closed"}
-                    variants={toggleVariants()}
-                    whileHover={{ color: "#3d3d3d", scale: 1.2 }}
-                >
-                    +
-                </motion.button>
-            </motion.div>
 
             <motion.div className="flex justify-between items-center">
                 <motion.p layout='position' className={`${styles.listBody} font-light my-5`}>{company_name.toUpperCase()}</motion.p>
