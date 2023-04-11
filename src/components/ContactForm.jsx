@@ -2,6 +2,7 @@ import emailjs from "@emailjs/browser"
 import { motion } from "framer-motion"
 import { useRef, useState } from "react"
 import { styles } from "../styles"
+import { validateEmail } from "../utils/validateEmail"
 
 const ContactForm = () => {
 
@@ -21,32 +22,43 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setLoading(true)
 
-        emailjs.send(
-            'service_roqgjzb',
-            'template_j39pmds',
-            {
-                from_name: form.name,
-                to_name: 'Guille',
-                from_email: form.email,
-                to_email: 'contact@jsmastery.pro',
-                message: form.message,
-            },
-            '3waAZaLERSx7u9Sjq'
-        )
-            .then(() => {
-                setLoading(false)
-                setForm({
-                    name: '',
-                    email: '',
-                    message: ''
-                }, (error) => {
-                    setLoading(false)
-                    console.log(error)
-                    alert('Something went wrong')
-                })
-            })
+        if (!form.name || !form.email || !form.message) {
+            alert("Please, complete all form fields")
+        } else {
+            if (validateEmail(form.email)) {
+                setLoading(true)
+
+                emailjs.send(
+                    'service_roqgjzb',
+                    'template_j39pmds',
+                    {
+                        from_name: form.name,
+                        to_name: 'Guille',
+                        from_email: form.email,
+                        to_email: 'contact@jsmastery.pro',
+                        message: form.message,
+                    },
+                    '3waAZaLERSx7u9Sjq'
+                )
+                    .then(() => {
+                        setLoading(false)
+                        setForm({
+                            name: '',
+                            email: '',
+                            message: ''
+                        }, (error) => {
+                            setLoading(false)
+                            console.log(error)
+                            alert('Something went wrong')
+                        })
+                    })
+            }
+            else {
+                alert("Please, use a valid email")
+            }
+        }
+
     }
 
     return (
